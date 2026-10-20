@@ -1,2 +1,10 @@
 # KeyboardTyper
-Windows browser extension and desktop keyboard input tool
+
+两个面向 Windows 网页输入场景的工具版本：
+
+- [v1.00](v1.00/)：Microsoft Edge 浏览器扩展，包含扩展源文件和安装包。
+- [v2.00](v2.00/)：Windows 桌面键盘输入工具，包含程序、源代码和安装包。
+
+## 版本说明
+
+这两个版本按功能形态分别归档。桌面版通过 Windows `SendInput` 发送软件模拟输入，不承诺能绕过所有网站的输入检测；请遵守目标网站规则。

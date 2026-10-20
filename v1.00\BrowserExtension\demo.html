@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>逐字输入 · 兼容性测试</title><link rel="stylesheet" href="demo.css"></head>
+<body>
+  <main>
+    <p class="eyebrow">KEYBOARD TYPER / TEST</p><h1>试试逐字输入</h1>
+    <p>本页禁止粘贴。打开扩展，填写正文，再选择下方输入区域；检查中文、标点、Emoji 和换行。</p>
+    <form id="form">
+      <label for="plain">普通单行输入框</label><input id="plain" type="text" placeholder="单行正文请选这里">
+      <label for="multiline">多行文本框</label><textarea id="multiline" rows="6" placeholder="试试：你好，世界！Hello 👋&#10;这是第二行。"></textarea>
+      <label id="rich-label">可编辑区域</label><div id="rich" contenteditable="true" role="textbox" aria-multiline="true" aria-labelledby="rich-label"></div>
+      <label for="limited">字数上限测试（最多 5 个 UTF-16 字符）</label><input id="limited" type="text" maxlength="5">
+      <label for="password">密码框（扩展不支持选择）</label><input id="password" type="password" autocomplete="off">
+      <button type="reset">清空</button>
+    </form>
+    <section aria-live="polite"><strong>事件观察</strong><pre id="events">等待输入…</pre></section>
+    <p class="note">如果通过本地文件打开，需要先在扩展详情中开启“允许访问文件网址”。这只是自测页，不代表所有网站的兼容性。</p>
+  </main>
+  <script src="demo.js"></script>
+</body></html>

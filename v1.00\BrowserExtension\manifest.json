@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "逐字输入 · Keyboard Typer",
+  "version": "1.0.0",
+  "description": "将用户提供的正文逐字输入到选定的网页输入框，支持中文、换行、速度设置和随时停止。",
+  "minimum_chrome_version": "118",
+  "permissions": ["activeTab", "scripting", "debugger", "storage"],
+  "background": { "service_worker": "background.js" },
+  "action": { "default_popup": "popup.html", "default_title": "逐字输入" },
+  "commands": {
+    "stop-typing": {
+      "suggested_key": { "default": "Ctrl+Shift+Y" },
+      "description": "立即停止逐字输入"
+    }
+  }
+}

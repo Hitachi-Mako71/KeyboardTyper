@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>逐字输入</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header><span class="mark" aria-hidden="true">Aa</span><div><h1>逐字输入</h1><p>把正文输入到网页光标处</p></div><span class="local">本地运行</span></header>
+  <main>
+    <label for="text">需要输入的正文 <span id="count">0 字</span></label>
+    <textarea id="text" placeholder="在这里粘贴正文，保留原有换行…" spellcheck="false" maxlength="100000"></textarea>
+    <div class="settings">
+      <div><label for="interval">每字间隔</label><select id="interval"><option value="25">快速 · 25 毫秒</option><option value="60" selected>标准 · 60 毫秒</option><option value="150">慢速 · 150 毫秒</option><option value="300">更慢 · 300 毫秒</option></select></div>
+      <div><label for="delay">选框后等待</label><select id="delay"><option value="1">1 秒</option><option value="2" selected>2 秒</option><option value="5">5 秒</option></select></div>
+    </div>
+    <p class="hint">点击下方按钮，再点击网页中的输入框。会从光标处输入；选中的文字会被替换。</p>
+    <div id="status" role="status" aria-live="polite">准备就绪</div>
+    <progress id="progress" value="0" max="1" hidden aria-label="输入进度"></progress>
+    <div class="actions"><button id="start" type="button">选择输入框并开始 →</button><button id="stop" type="button" disabled>停止</button></div>
+    <p class="foot">Esc / Ctrl + Shift + Y 停止 · 不自动提交表单</p>
+    <details><summary>权限与兼容性</summary><p>通过浏览器调试接口逐字输入，不读取剪贴板，不发送正文到服务器。浏览器可能显示调试提示条。正文草稿只保存在本次浏览器会话中；任务开始后清除草稿。</p><p>支持普通输入框、文本域和常见可编辑区域。仅支持页面顶层及开放的 Shadow DOM；嵌入式 iframe、浏览器内部页和特殊编辑器可能不支持。不保证绕过所有检测，也不模拟操作系统的实体键盘。请关闭目标页面开发者工具后使用。</p></details>
+  </main>
+  <script src="popup.js"></script>
+</body>
+</html>
